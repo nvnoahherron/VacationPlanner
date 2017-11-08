@@ -12,6 +12,12 @@
       background-color: #f1f1f1;
       height: 100%;
     }
+    #weather {
+      border: 1px solid black;
+    }
+    #recentLocations {
+      border: 1px solid;
+    }
     
     /* Set black background color, white text and some padding */
     footer {

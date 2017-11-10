@@ -1,5 +1,6 @@
     body {
       font-family: 'Raleway', sans-serif;
+      background-color: darkgray;
     }
 
     .navbar {
@@ -54,3 +55,20 @@
     #search-form {
       margin-left: 162px;
     }
+    
+    #mapsWeather {
+    }
+
+    #getaway {
+      color: black;
+    }
+
+    .white {
+      color: white;
+    }
+
+
+
+
+
+

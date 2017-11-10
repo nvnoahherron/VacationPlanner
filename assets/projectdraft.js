@@ -30,6 +30,7 @@ $(document).ready(function() {
       var newImage = $("<img>");
 
       newImage.attr('src', imageSrc);
+      newImage.attr('id', 'newImage');
 
       $("#images").append(newImage);
 

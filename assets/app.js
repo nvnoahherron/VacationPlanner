@@ -1,52 +1,79 @@
 
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
 
-function ajaxCall() {
-//Place Search AJAX
-var AuthKey = "key=AIzaSyBdQJlj34lrWZa5HxtRnRc0qMoE6VVXRUo";
-var placeSearchTerm = "jamaica"; //searchTerm;
-var placeQueryURLBase =  "https://maps.googleapis.com/maps/api/place/textsearch/json?query=";
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-//Photo Search Ajax 
-var photoQueryUrlBase = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=";
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 43.5446, lng: -96.7311},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
 
-$.ajax({
-      url: placeQueryURLBase + placeSearchTerm + "&" + AuthKey,
-      method: "GET"
-    }).done(function(response) {
-      console.log(response);
-      var photoReference = response['results'][0]['photos'][0]['photo_reference']
-      console.log(photoReference);
-      var photoResponse = (photoQueryUrlBase + photoReference + '&' + AuthKey);
-      console.log(photoResponse);
-      // $.ajax({
-      // 	url: photoQueryUrlBase + photoReference + '&' + AuthKey,
-      // 	method: "GET"
-      // }).done(function(photoResponse){
-      // 	console.log(photoResponse);
-      // 	return photoResponse;
-      // })
-    });
-}  
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('search-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.Search].push(input);
 
-console.log(ajaxCall());  
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
 
 
-// $("#search").on("click", function(event) {
-// 	event.preventDefault();
 
-// 	$("#images").empty();
-
-	// var newImage = $("<img>")
-
-	//newImage.attr('src', 'photoResponse')
-
-	//$("#images").append(newImage);
-
-// 	var searchTerm = $("#searchTerm").val().trim();
-//pass this into function for the placeSearchTerm
-
-//append several images into the "images" div 
-
-// 	var searchURL = queryURLBase + searchTerm;
-// })
 

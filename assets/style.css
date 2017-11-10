@@ -1,7 +1,29 @@
 body {
-  background-image: url("https://i2.wp.com/www.thedesignlove.com/wp-content/uploads/2012/09/TDL-Pattern-05.jpg?resize=525%2C351");
+  background-image: url("https://epicinteriors.com/wp-content/uploads/2015/01/textures-wallpapers-8-metal-textures1920x1200-metal-picture.jpg");
 }
  
+h2 	{
+	color: white;
+}
 
+#myCarousel	{
+	top: 20px;
+	border-radius: 50%;
+}
 
+h3 	{
+	font-size: 60px;
+	color: white;
+}
 
+#weather  {
+	color: white;
+}
+
+#recentLocations	{
+	color: white;
+}
+
+#search-button	{
+	color: grey;
+}

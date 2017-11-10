@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     body {
       font-family: 'Raleway', sans-serif;
       background-color: darkgray;
@@ -66,3 +67,34 @@
 
 
 
+=======
+body {
+  background-image: url("https://epicinteriors.com/wp-content/uploads/2015/01/textures-wallpapers-8-metal-textures1920x1200-metal-picture.jpg");
+}
+ 
+h2 	{
+	color: white;
+}
+
+#myCarousel	{
+	top: 20px;
+	border-radius: 50%;
+}
+
+h3 	{
+	font-size: 60px;
+	color: white;
+}
+
+#weather  {
+	color: white;
+}
+
+#recentLocations	{
+	color: white;
+}
+
+#search-button	{
+	color: grey;
+}
+>>>>>>> 16512fa057cc6bb0f60119d295cd67dd45130c87

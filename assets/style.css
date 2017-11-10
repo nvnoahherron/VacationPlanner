@@ -1,3 +1,7 @@
+    body {
+      font-family: 'Raleway', sans-serif;
+    }
+
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
@@ -17,7 +21,12 @@
     footer {
       background-color: #555;
       color: white;
-      padding: 15px;
+      padding: 20px;
+      height: 50px;
+      width: 100%;
+      padding: 20px;
+      margin:  0 auto;
+
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
@@ -27,4 +36,21 @@
         padding: 15px;
       }
       .row.content {height:auto;} 
+    }
+
+    #images {
+      background-color: #555;
+      max-height: 400px;
+      max-width: 400px;
+      width: 70%;
+
+    }
+
+    #search-form {
+      vertical-align: middle;
+    }
+
+
+    #search-form {
+      margin-left: 162px;
     }

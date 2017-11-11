@@ -71,7 +71,6 @@ $(document).ready(function() {
 			city.text(yourCity[i]);
 
 			$("#recentLocations").append(city);
-			 console.log(city);
 		}
 	}
 

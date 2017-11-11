@@ -1,9 +1,11 @@
 body {
  background-image: url("https://epicinteriors.com/wp-content/uploads/2015/01/textures-wallpapers-8-metal-textures1920x1200-metal-picture.jpg");
+	font-family: 'Raleway', sans-serif;
 }
  
 h2 	{
 	color: white;
+	text-align: center;
 }
 
 #myCarousel	{
@@ -32,4 +34,12 @@ h3 	{
 	color: white;
 	margin: 10px;
   padding: 5px;
+}
+
+#searchDestination {
+	margin-top: 20px;
+}
+
+#newImage {
+	border: 15px solid #555;
 }

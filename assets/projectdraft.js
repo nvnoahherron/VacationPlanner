@@ -30,7 +30,6 @@ $(document).ready(function() {
     getLocation();
   })
   $("#search-form").on("submit", getLocation);
-  event.preventDefault();
   getLocation();
 })
 

@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://epicinteriors.com/wp-content/uploads/2015/01/textures-wallpapers-8-metal-textures1920x1200-metal-picture.jpg");
+ background-image: url("https://epicinteriors.com/wp-content/uploads/2015/01/textures-wallpapers-8-metal-textures1920x1200-metal-picture.jpg");
 }
  
 h2 	{
@@ -12,7 +12,7 @@ h2 	{
 }
 
 h3 	{
-	font-size: 60px;
+	font-size: 30px;
 	color: white;
 }
 
@@ -26,4 +26,10 @@ h3 	{
 
 #search-button	{
 	color: grey;
+}
+.newCity {
+	background-color: DarkCyan;
+	color: white;
+	margin: 10px;
+  padding: 5px;
 }
